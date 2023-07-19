@@ -5,9 +5,10 @@ export async function swagger(app: INestApplication) {
   const config = new DocumentBuilder()
     .setTitle('API Document')
     .setDescription('REST API document')
-    .setVersion('1.0')
+    .setVersion('2023.07.18')
     .addTag('REST')
     .addBearerAuth()
+    .addCookieAuth('Refresh')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('document', app, document);
